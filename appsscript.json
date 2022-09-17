@@ -1,0 +1,41 @@
+{
+  "timeZone": "Europe/London",
+  "dependencies": {
+    "enabledAdvancedServices": [
+      {
+        "userSymbol": "Drive",
+        "version": "v2",
+        "serviceId": "drive"
+      }
+    ]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/script.locale",
+    "https://www.googleapis.com/auth/drive.addons.metadata.readonly",
+    "https://www.googleapis.com/auth/drive"
+  ],
+  "runtimeVersion": "V8",
+  "addOns": {
+    "common": {
+      "name": "Drive Bulk Actions",
+      "logoUrl": "https://raw.githubusercontent.com/roblovelock/google-drive-bulk-actions/main/assets/rename.png",
+      "useLocaleFromApp": true,
+      "homepageTrigger": {
+        "runFunction": "onHomepage",
+        "enabled": true
+      },
+      "universalActions": [
+        {
+          "label": "About Drive Bulk Actions",
+          "openLink": "https://github.com/roblovelock/google-drive-bulk-actions"
+        }
+      ]
+    },
+    "drive": {
+      "onItemsSelectedTrigger": {
+        "runFunction": "onDriveItemsSelected"
+      }
+    }
+  }
+}
